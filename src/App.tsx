@@ -18,7 +18,9 @@ const App: FC = () => {
   const addTask = (): void => {
     const newTask = { task: task, deadline: deadline }; //WHITE "TASK" AND "DEADLINE" COME FROM THE PROPERTIES OF THE INTERFACE
     setTodoList([...todoList, newTask]);
-    console.log(todoList);
+    //Clear the values of the form when a task is added:
+    setTask("");
+    setDeadline(0);
   };
   return (
     <div className="app">
@@ -27,12 +29,14 @@ const App: FC = () => {
           <input
             type="text"
             name="task"
+            value={task}
             placeholder="Type your task"
             onChange={handleChange}
           />
           <input
             type="number"
             name="deadline"
+            value={deadline}
             placeholder="Deadline in days"
             onChange={handleChange}
           />
