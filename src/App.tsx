@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FC, useState } from "react";
 import "./App.css";
 import { ITask } from "./Interfaces";
+import TodoTask from "./components/TodoTask";
 
 const App: FC = () => {
   const [task, setTask] = useState<string>("");
@@ -16,12 +17,18 @@ const App: FC = () => {
   };
 
   const addTask = (): void => {
-    const newTask = { task: task, deadline: deadline }; //WHITE "TASK" AND "DEADLINE" COME FROM THE PROPERTIES OF THE INTERFACE
+    const newTask = { taskName: task, deadline: deadline }; //WHITE "TASK" AND "DEADLINE" COME FROM THE PROPERTIES OF THE INTERFACE
     setTodoList([...todoList, newTask]);
     //Clear the values of the form when a task is added:
     setTask("");
     setDeadline(0);
   };
+
+  const completeTask = (taskNameToDelete: string):void => {
+    setTodoList(todoList.filter((task)=>{
+      return task.taskName !== taskNameToDelete
+    }))
+  }
   return (
     <div className="app">
       <div className="header">
@@ -43,7 +50,11 @@ const App: FC = () => {
         </div>
         <button onClick={addTask}>Add Task</button>
       </div>
-      <div className="todoList"></div>
+      <div className="todoList">
+        {todoList.map((oneTask: ITask, index: number) => {
+          return <TodoTask key={index} task={oneTask} completeTask={completeTask}/>;
+        })}
+      </div>
     </div>
   );
 };
