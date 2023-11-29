@@ -13,7 +13,7 @@ const TodoTask = ({ task, completeTask }: Props) => {
         {task.taskName} in {task.deadline} days
       </h3>
       {/*FROM INTERFACE OF ITASK- EITHER TASKNAME OR DEADLINE*/}
-      <button onClick={()=>completeTask(task.taskName)}>X</button>
+      <button onClick={() => completeTask(task.taskName)}>✔️</button>
     </div>
   );
 };
