@@ -24,11 +24,13 @@ const App: FC = () => {
     setDeadline(0);
   };
 
-  const completeTask = (taskNameToDelete: string):void => {
-    setTodoList(todoList.filter((task)=>{
-      return task.taskName !== taskNameToDelete
-    }))
-  }
+  const completeTask = (taskNameToDelete: string): void => {
+    setTodoList(
+      todoList.filter((task) => {
+        return task.taskName !== taskNameToDelete;
+      })
+    );
+  };
   return (
     <div className="app">
       <div className="header">
@@ -37,7 +39,7 @@ const App: FC = () => {
             type="text"
             name="task"
             value={task}
-            placeholder="Type your task"
+            placeholder="Type your task here✍🏼"
             onChange={handleChange}
           />
           <input
@@ -52,9 +54,17 @@ const App: FC = () => {
       </div>
       <div className="todoList">
         {todoList.map((oneTask: ITask, index: number) => {
-          return <TodoTask key={index} task={oneTask} completeTask={completeTask}/>;
+          return (
+            <TodoTask key={index} task={oneTask} completeTask={completeTask} />
+          );
         })}
       </div>
+      <p id="credits">
+        <a href="https://github.com/marinamun/typescript-toDo" target="_blank">
+          <strong>Open-source code </strong>
+          by Marina M. ✨
+        </a>
+      </p>
     </div>
   );
 };

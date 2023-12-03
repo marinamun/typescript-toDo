@@ -12,7 +12,12 @@ body {
 }
 .header {
   flex: 30%;
-  background-color: #fdfdcb;
+  /* background-color: #fdfdcb; */
+  background: linear-gradient(
+    109.5deg,
+    rgb(76, 221, 242) 11.2%,
+    rgb(92, 121, 255) 91.1%
+  );
   width: 100%;
   display: flex;
   justify-content: center;
@@ -30,18 +35,19 @@ body {
   margin-top: 5px;
   padding-left: 10px;
   font-size: 17px;
-  border: 2px solid #c54c82;
+  border: 2px solid white;
   background-color: white;
 }
 .header button {
   width: 70px;
   height: 95px;
   border-radius: 10px;
-  background-color: #c54c82;
-  color: white;
+  background-color: white;
+  color: black;
 
   padding: 10px;
   cursor: pointer;
+  font-family: "DM Sans", sans-serif;
 }
 .todoList {
   flex: 70%;
@@ -49,8 +55,12 @@ body {
 }
 
 .task {
-  border: 2px solid #66BFBF;
-  background-color: #EAF6F6;
+  background: radial-gradient(
+    343px at 46.3% 47.5%,
+    rgb(242, 242, 242) 0%,
+    rgb(241, 241, 241) 72.9%
+  );
+  color: black;
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -59,8 +69,36 @@ body {
   margin-left: 300px;
   margin-right: 300px;
   margin-top: 30px;
-  border-radius: 20px;
+  border-radius: 30px;
 }
-.task button{
+.task button {
   margin-left: 20px;
+  border-radius: 30px;
+}
+input,
+h3 {
+  font-family: "DM Sans", sans-serif;
+}
+.taskName{
+  font-size: larger;
+}
+
+/*Credits*/
+#credits {
+  text-align: center;
+  font-size: 10px;
+  line-height: 1px;
+  font-family: "Neucha", cursive;
+  color: black;
+  margin-bottom: 40px;
+}
+#credits a {
+  color: black;
+  text-decoration: none;
+}
+#credits:hover {
+  font-size: 12px;
+}
+#credits a:hover {
+  font-size: 12px;
 }
