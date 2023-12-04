@@ -2,6 +2,7 @@ import React, { ChangeEvent, FC, useState } from "react";
 import "./App.css";
 import { ITask } from "./Interfaces";
 import TodoTask from "./components/TodoTask";
+import whitelogo from "./images/whitelogo.png";
 
 const App: FC = () => {
   const [task, setTask] = useState<string>("");
@@ -34,6 +35,7 @@ const App: FC = () => {
   return (
     <div className="app">
       <div className="header">
+        <img src={whitelogo} style={{ width: "120px" }} className="logo" />
         <div className="inputContainer">
           <input
             type="text"
