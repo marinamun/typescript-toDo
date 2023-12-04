@@ -22,9 +22,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.logo{
+.logo {
   margin-top: 10px;
   margin-right: 20px;
 }
@@ -54,7 +53,6 @@ body {
   padding: 10px;
   cursor: pointer;
   font-family: "DM Sans", sans-serif;
-  
 }
 .todoList {
   flex: 70%;
@@ -86,7 +84,7 @@ input,
 h3 {
   font-family: "DM Sans", sans-serif;
 }
-.taskName{
+.taskName {
   font-size: larger;
 }
 
@@ -95,9 +93,9 @@ h3 {
   text-align: center;
   font-size: 10px;
   line-height: 1px;
-  font-family: "Neucha", cursive;
+  font-family: "DM Sans", sans-serif;
   color: black;
-  margin-bottom: 0px;
+  margin-bottom: 40px;
 }
 #credits a {
   color: black;
@@ -111,9 +109,10 @@ h3 {
 }
 
 @media screen and (max-width: 850px) {
-  .logo{
+  .logo {
     display: none;
   }
-.header{
-  margin-top: -40px;
-}}
+  .header {
+    margin-top: -40px;
+  }
+}
